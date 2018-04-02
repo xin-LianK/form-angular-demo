@@ -14,9 +14,9 @@ export class AppComponent {
     this.questions = service.getQuestions();
   }
 
-  value1 = '';
-  value2 = '';
-  value3 = '';
+  value1 = '1';
+  value2 = '1';
+  value3 = '1';
 
   // 输入框的全部值
   onKeyOne(event: any) {
