@@ -1,4 +1,65 @@
 <div>
-    <h2>Job Application for Heroes</h2>
-    <app-dynamic-form [questions]="questions"></app-dynamic-form>
+  <h2>Job Application for Heroes</h2>
+  <app-dynamic-form [questions]="questions"></app-dynamic-form>
+</div>
+<div>-------------------------------------------------------------------------------------------------------------------------------------</div>
+
+<div class="input-group mb-3">
+  <div class="input-group-prepend">
+    <span class="input-group-text">输入框的全部值</span>
+  </div>
+  <input type="text" class="form-control" (keyup)="onKeyOne($event)">
+  <div class="input-group-append">
+    <span class="input-group-text">{{value1}}</span>
+  </div>
+</div>
+
+<div class="input-group mb-3">
+  <div class="input-group-prepend">
+    <span class="input-group-text">输入框的每个键值</span>
+  </div>
+  <input type="text" class="form-control" (keyup)="onKeyTwo($event)">
+  <div class="input-group-append">
+    <span class="input-group-text">{{value2}}</span>
+  </div>
+</div>
+
+<div class="input-group mb-3">
+  <div class="input-group-prepend">
+    <span class="input-group-text">不需要绑定事件</span>
+  </div>
+  <input type="text" #test class="form-control" (keyup)="0">
+  <div class="input-group-append">
+    <span class="input-group-text">{{test.value}}</span>
+  </div>
+</div>
+
+<div class="input-group mb-3">
+  <div class="input-group-prepend">
+    <span class="input-group-text">输入框的全部值</span>
+  </div>
+  <input type="text" #box class="form-control" (keyup)="onKey(box.value)">
+  <div class="input-group-append">
+    <span class="input-group-text">{{value3}}</span>
+  </div>
+</div>
+
+<div class="input-group mb-3">
+  <div class="input-group-prepend">
+    <span class="input-group-text">Enter按键</span>
+  </div>
+  <input type="text" #box1 class="form-control" (keyup.enter)="onKey(box.value)">
+  <div class="input-group-append">
+    <span class="input-group-text">{{box1.value}}</span>
+  </div>
+</div>
+
+<div class="input-group mb-3">
+  <div class="input-group-prepend">
+    <span class="input-group-text">Blur事件</span>
+  </div>
+  <input type="text" #box2 class="form-control" (blur)="onKey(box.value)">
+  <div class="input-group-append">
+    <span class="input-group-text">{{box2.value}}</span>
+  </div>
 </div>

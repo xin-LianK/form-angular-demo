@@ -4,12 +4,7 @@ import { QuestionService } from './question.service';
 
 @Component({
   selector: 'app-root',
-  template: `
-    <div>
-      <h2>Job Application for Heroes</h2>
-      <app-dynamic-form [questions]="questions"></app-dynamic-form>
-    </div>
-  `,
+  templateUrl: './app.component.html',
   providers: [QuestionService]
 })
 export class AppComponent {
@@ -18,4 +13,23 @@ export class AppComponent {
   constructor(service: QuestionService) {
     this.questions = service.getQuestions();
   }
+
+  value1 = '';
+  value2 = '';
+  value3 = '';
+
+  // 输入框的全部值
+  onKeyOne(event: any) {
+    this.value1 += event.target.value + ' | ';
+  }
+
+  // 每次输入的那个值
+  onKeyTwo(event: any) {
+    this.value2 += event.key + ' | ';
+  }
+
+  onKey(value: string) {
+    this.value3 = value
+  }
+
 }
